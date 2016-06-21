@@ -29,6 +29,7 @@ module OpmlSaw
           if has_children?(node)
             title = outline[:title] || outline[:text]
             parse(node.children, title)
+            self.feeds.select {|f| f[:tag] == nil}.map{|f| f[:text]}
           #else
 
           end
